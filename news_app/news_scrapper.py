@@ -22,6 +22,7 @@ def bbc_news():
           for i in range(iterator):
               titles = mainPage[i].div.find('a')
               date_time = mainPage[i].find('ul')
+              print(date_time.text)
               date_.append(date_time.text.split('ago'))
               mat = mainPage[i].div.find('p')
               news[titles.text] = mat.text
@@ -101,5 +102,4 @@ def indian_express():
             date_.pop(0)
             break
 
-indian_express()
 bbc_news()
