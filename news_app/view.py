@@ -25,7 +25,13 @@ if response.status_code == 200:
     for i in range(iterator):
         titles = mainPage[i].div.find('a')
         date_time = mainPage[i].find('ul')
-        date_.append(date_time.text.split('ago'))
+        date_time = date_time.text.split('ago')
+        for j in range(len(date_time[0])):
+            if date_time[0][j] == 'h':
+                ind = j
+                break
+        date_.append(date_time[0][: ind+1]+' '+ date_time[1])
+        print(date_)
         mat = mainPage[i].div.find('p')
         news[titles.text] = mat.text
                   
@@ -33,4 +39,4 @@ if response.status_code == 200:
 
 def index(request):
     #return render(request, 'front/index.html', {}) 
-    return render(request, 'front/index.html', {'bbc' : news}) 
+    return render(request, 'front/index.html', {'bbc' : news, "date_time" : date_})
