@@ -98,8 +98,9 @@ def indian_express():
               mat = mainPage[i].p.text
               date_time = mainPage[i].find('div', attrs = {"class": "date"}).text
               date_.append(date_time)
-              print(date_)
-              news[titles] = mat
+              news[titles[1:-1]] = mat
+          print(news)
+          print(date_)
       for keys in news:
           for j in date_:
             res = """
@@ -110,4 +111,4 @@ def indian_express():
             date_.pop(0)
             break
 
-bbc_news()
+indian_express()

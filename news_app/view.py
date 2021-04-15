@@ -33,10 +33,33 @@ if response.status_code == 200:
         date_.append(date_time[0][: ind+1]+' '+ date_time[1])
         mat = mainPage[i].div.find('p')
         news[titles.text] = mat.text
-list_ = zip(news.items(), date_)
-                  
+list_1 = zip(news.items(), date_)
+
+url = "https://indianexpress.com/section/india/"   
+
+response = requests.get(url)
+if response.status_code == 200:
+    webpage = response.content
+    final_list = []
+    soup = bs4.BeautifulSoup(webpage, 'html.parser')
+    mainPage = (soup.find_all('div', attrs = {"class":"articles"})) 
+    news = {}
+    date_ = []
+    if len(mainPage) > 5:
+        iterator = 5
+    else:
+        iterator = len(mainPage)  
+    for i in range(iterator):
+        titles = mainPage[i].h2.text
+        mat = mainPage[i].p.text
+        date_time = mainPage[i].find('div', attrs = {"class": "date"}).text
+        date_.append(date_time)
+        print(date_)
+        news[titles[1:-1]] = mat
+list_2 = zip(news.items(), date_)                 
+
 
 
 def index(request):
     #return render(request, 'front/index.html', {}) 
-    return render(request, 'front/index.html', {'bbc' : list_})
+    return render(request, 'front/index.html', {'bbc' : list_1, 'indian_express': list_2})
