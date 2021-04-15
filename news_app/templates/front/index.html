@@ -39,20 +39,11 @@ h1{
         
     </center>
     
-<div class="background">
+
   <div class="transbox">
     <div class="container">
         <div class="row">
-            <div class="col-6">
-<<<<<<< HEAD
-                    <h3 class="text-centre" ;">News from Indian Express </h3>
-                    {% for n in toi_news %}
-                    <h5> -  {{n}} </h5>
-                    <hr>
-                    {% endfor %}
-                    <br>
-            </div> 
-=======
+            <div class="col-6"> 
                     <h3 class="text-centre">News from Indian Express</h3>
                     {% for keys,date in indian_express %}
                     <h5> - {{keys.0}} </h5>
@@ -63,7 +54,6 @@ h1{
                     {% endfor %}
                     <br>
             </div>
->>>>>>> 4d70c1d5fc386de39430e69648e5a748794ef1c1
             <div class="col-6">
                     <h3 class="text-centre">News from BBC</h3>
                     {% for keys,date in bbc %}
@@ -77,7 +67,7 @@ h1{
             </div>
         </div>
     </div>
- </div>
+ 
  
 </div>
     <script
