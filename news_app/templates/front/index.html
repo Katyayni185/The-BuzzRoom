@@ -3,24 +3,54 @@
 <head>
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+body {
+  background-image: url('https://source.unsplash.com/daily');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: black;
+  margin: 80px;
+}
+div{ 
+  color: black;
+}
+div.transbox {
+  margin: 10px;
+  background-color: #ffffff;
+  border: 1px solid black;
+}
+h1{   
+    color: black;
+    padding: 40px;     
+}
+</style>
 </head>
 <body>
+
     <div class="jumbotron">
-        <center><h1>News</h1>
-           <a href="/" class="btn btn-danger">Refresh News</a>
-        </form>
+    
+    
+        <center><h1>The Buzz Around </h1>
+       
+        
+           <a href="/" class="btn btn-primary btn-lg">Refresh News</a>
+           
+        
     </center>
-    </div>
+    
+<div class="background">
+  <div class="transbox">
     <div class="container">
         <div class="row">
-            <!-- <div class="col-6">
-                    <h3 class="text-centre">News from </h3>
+            <div class="col-6">
+                    <h3 class="text-centre" ;">News from Indian Express </h3>
                     {% for n in toi_news %}
                     <h5> -  {{n}} </h5>
                     <hr>
                     {% endfor %}
                     <br>
-            </div> -->
+            </div> 
             <div class="col-6">
                     <h3 class="text-centre">News from BBC</h3>
                     {% for keys in bbc %}
@@ -30,7 +60,8 @@
                     <br>
             </div>
         </div>
- 
+    </div>
+ </div>
  
 </div>
     <script
@@ -39,5 +70,6 @@ integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>

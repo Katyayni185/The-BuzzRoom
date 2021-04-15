@@ -20,7 +20,7 @@ from django.urls import path
 from news_app import view
 
 urlpatterns = [
-    path('', view.index, name = "Home"),
+    path('', view.index, name = "news_app"),
 
     path('admin/', admin.site.urls),
    
