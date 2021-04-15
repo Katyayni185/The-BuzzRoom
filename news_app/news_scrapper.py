@@ -20,7 +20,7 @@ def bbc_news():
               iterator = len(mainPage)     
 
           for i in range(iterator):
-              titles = mainPage[i].div.find('a')
+              titles = mainPage[i].div.find('h3')
               date_time = mainPage[i].find('ul')
               date_time = date_time.text.split('ago')
               for j in range(len(date_time[0])):
@@ -31,15 +31,17 @@ def bbc_news():
               print(date_)
               mat = mainPage[i].div.find('p')
               news[titles.text] = mat.text
-          for key in news:
-              for j in date_:
-                  res = """
-                        *{}*
-                        {}
-                        {} {}""".format(key, news[key], j[0][:2]+' ago', j[1])
-                  (res)
-                  date_.pop(0)
-                  break
+          for (x,y),z in(zip(news.items(),date_)):
+              print(x,y,z)
+        # #   for key in news:
+        # #       for j in date_:
+        # #           res = """
+        # #                 *{}*
+        # #                 {}
+        # #                 {} {}""".format(key, news[key], j[0][:2]+' ago', j[1])
+        # #           (res)
+        # #           date_.pop(0)
+        # #           break
 
 
 # def intercept():
