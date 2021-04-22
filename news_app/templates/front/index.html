@@ -11,18 +11,31 @@ body {
   background-size: cover;
   color: black;
   margin: 80px;
+  
 }
 div{ 
   color: black;
+  background: linear-gradient(to bottom, white, #F08080);
+  background-color: #F08080;
 }
 div.transbox {
-  margin: 10px;
-  background-color: #ffffff;
-  border: 1px solid black;
+  margin: 3em;
+  background-color: #F08080;
+  border: 1px solid;
+  border-color: #F08080;
 }
 h1{   
-    color: black;
-    padding: 40px;     
+    color: #A85959;   
+    margin: 1em;
+    font-size: 80px;
+    font-family: Cursive ;
+    font-weight: bold;
+}
+h3{
+  text-transform: uppercase;
+  padding: 10px;
+  font-family : Sans-serif;
+  
 }
 </style>
 </head>
@@ -31,7 +44,7 @@ h1{
     <div class="jumbotron">
     
     
-        <center><h1>The Buzz Around </h1>
+        <center><h1>The Buzz Room </h1>
        
         
            <a href="/" class="btn btn-primary btn-lg">Refresh News</a>
@@ -44,7 +57,7 @@ h1{
     <div class="container">
         <div class="row">
             <div class="col-6"> 
-                    <h3 class="text-centre">News from Indian Express</h3>
+                    <h3 class="text-centre"><strong>News from Indian Express</strong></h3>
                     {% for keys,date in indian_express %}
                     <h5> - {{keys.0}} </h5>
                     {{keys.1}}
@@ -55,7 +68,7 @@ h1{
                     <br>
             </div>
             <div class="col-6">
-                    <h3 class="text-centre">News from BBC</h3>
+                    <h3 class="text-centre"><strong>News from BBC</strong></h3>
                     {% for keys,date in bbc %}
                     <h5> - {{keys.0}} </h5>
                     {{keys.1}}
