@@ -111,4 +111,31 @@ def indian_express():
             date_.pop(0)
             break
 
-indian_express()
+def google_news():
+    import bs4
+    import requests
+    import time
+    import json
+    import numpy as np
+    url = "https://news.google.com/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRE55YXpBU0FtVnVLQUFQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
+
+    response = requests.get(url)
+    if response.status_code == 200:
+        webpage = response.content
+        final_list = []
+        soup = bs4.BeautifulSoup(webpage, 'html.parser')
+        mainPage = (soup.find_all(
+            'div', attrs={"data-n-et": "250"}))
+        headline = []
+        mat = []
+        time = []
+        if len(mainPage) > 10:
+            iterator = 10
+        else:
+            iterator = len(mainPage)
+        for i in range(iterator):
+            headline.append(mainPage[i].h3.text)
+            mat.append(mainPage[i].h4.text)
+            time.append(mainPage[i].time.text)
+    
+google_news()
